@@ -15,8 +15,8 @@ function check_master {
     for e in TRAVIS_BRANCH TRAVIS_COMMIT TRAVIS_PULL_REQUEST TRAVIS_PULL_REQUEST_BRANCH TRAVIS_PULL_REQUEST_SHA TRAVIS_REPO_SLUG; do
       eval "echo $e=\${$e}"
     done
-    if [[ $TRAVIS_REPO_SLUG != 'dockersolr/docker-solr' ]]; then
-      echo "Not pushing because this is not the dockersolr/docker-solr repo"
+    if [[ $TRAVIS_REPO_SLUG != 'metabrainz/solr' ]]; then
+      echo "Not pushing because this is not the metabrainz/solr repo"
       exit 0
     fi
     if [[ $TRAVIS_PULL_REQUEST != 'false' ]]; then
@@ -37,14 +37,13 @@ function login {
 
 function push {
   tag=$1
-  # The organisation on hub.docker.com is "dockersolr".
-  # It should really have been "docker-solr" for consistency with the organisation
-  # on github but currently dashes are not allowed, see https://github.com/docker/hub-feedback/issues/373
-  # The hub user is "dockersolrbuilder".
-  if grep -E -q '^dockersolr/docker-solr:' <<<"$tag"; then
+  # The organisation on hub.docker.com is "metabrainz".
+  # The hub user is "metabrainzdocker".
+  if grep -E -q '^metabrainz/solr:' <<<"$tag"; then
     push_tag="$tag"
   else
-    push_tag="dockersolr/docker-solr:$tag"
+    push_tag="metabrainz/solr:$tag"
+    tag="$push_tag"
   fi
   # pushing to the docker registry sometimes fails, so retry
   local max_try=3

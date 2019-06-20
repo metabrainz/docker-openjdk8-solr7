@@ -1,8 +1,11 @@
 
 FROM $REPLACE_FROM
 
-LABEL maintainer="Martijn Koster \"mak-docker@greenhills.co.uk\""
-LABEL repository="https://github.com/docker-solr/docker-solr"
+LABEL org.label-schema.schema-version="1.0.0-rc1" \
+      org.label-schema.vcs-url="https://github.com/metabrainz/docker-openjdk8-solr7.git" \
+      org.label-schema.vendor="MetaBrainz Foundation" \
+      org.metabrainz.based-on-image="$REPLACE_FROM" \
+      org.metabrainz.solr.version="$REPLACE_SOLR_VERSION"
 
 # Override the solr download location with e.g.:
 #   docker build -t mine --build-arg SOLR_DOWNLOAD_SERVER=http://www-eu.apache.org/dist/lucene/solr .

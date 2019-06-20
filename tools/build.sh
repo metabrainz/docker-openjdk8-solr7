@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Build a docker-solr build directory and set tags
+# Build a docker-openjdk8-solr7 build directory and set tags
 #
 # Usage: build.sh dir
 
@@ -24,7 +24,7 @@ relative_dir="$(sed -e "s,$TOP_DIR/,," <<< "$build_dir")"
 cd "$build_dir"
 
 if [[ -z "${IMAGE_NAME:-}" ]]; then
-  IMAGE_NAME="dockersolr/docker-solr"
+  IMAGE_NAME="metabrainz/solr"
 fi
 full_tag="$(awk --field-separator ':' '$1 == "'"$relative_dir"'" {print $2}' "$TOP_DIR/TAGS")"
 

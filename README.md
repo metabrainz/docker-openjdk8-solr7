@@ -2,9 +2,7 @@
 
 - [`7.7.1-alpine`, `7.7-alpine`, `7-alpine` (*7.7/alpine/Dockerfile*)](https://github.com/docker-solr/docker-solr/blob/6f7a6e812247d00f9f3c293993e26d6d041c119e/7.7/alpine/Dockerfile)
 
-For more information about this image and its history, please see [the relevant manifest file (`library/solr`)](https://github.com/docker-library/official-images/blob/master/library/solr). This image is updated via pull requests to [the `docker-solr/docker-solr` GitHub repo](https://github.com/docker-solr/docker-solr).
-
-For detailed information about the virtual/transfer sizes and individual layers of each of the above supported tags, please see [the `solr/tag-details.md` file](https://github.com/docker-library/docs/blob/master/solr/tag-details.md) in [the `docker-library/docs` GitHub repo](https://github.com/docker-library/docs).
+This image is updated via pull requests to [the `metabrainz/docker-openjdk8-solr7` GitHub repo](https://github.com/docker-solr/docker-solr) which is derived from [the `docker-solr/docker-solr` GitHub repo](https://github.com/docker-solr/docker-solr).
 
 # What is Apache Solr™?
 
@@ -249,7 +247,9 @@ Changes:
 
 # About this repository
 
-This repository is available on [github.com/docker-solr/docker-solr](https://github.com/docker-solr/docker-solr), and the official build is on the [Docker Hub](https://hub.docker.com/_/solr/).
+This repository is available on [github.com/metabrainz/docker-openjdk8-solr7](https://github.com/metabrainz/docker-openjdk8-solr7), and the official build is on the [Docker Hub](https://hub.docker.com/r/metabrainz/solr/).
+
+It is derived from the Docker build for Solr used to manage the official Docker hub solr image. See the repository available on [github.com/docker-solr/docker-solr](https://github.com/docker-solr/docker-solr), and the official build on the [Docker Hub](https://hub.docker.com/_/solr/).
 
 # License
 
@@ -258,6 +258,7 @@ Solr is licensed under the [Apache License, Version 2.0](https://www.apache.org/
 This repository is also licensed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 Copyright 2015-2019 Martijn Koster
+Copyright 2019 MetaBrainz Foundation (minimal maintenance fork)
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
@@ -269,7 +270,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 ## Issues
 
-Please report issues with this docker image on this [Github project](https://github.com/docker-solr/docker-solr).
+Please report issues with this docker image on this [Bug Tracker](https://tickets.metabrainz.org/projects/SOLR).
 
 For general questions about Solr, see the [Community information](http://lucene.apache.org/solr/resources.html#community), in particular the solr-user mailing list.
 

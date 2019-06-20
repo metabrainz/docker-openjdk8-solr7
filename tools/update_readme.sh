@@ -14,9 +14,9 @@ tac TAGS | while read -r line; do
   for tag in $tags; do
     out="$out, \`$tag\`"
   done
-  out="$out (*$dir/Dockerfile*)](https://github.com/docker-solr/docker-solr/blob/$commit/$dir/Dockerfile)"
+  out="$out (*$dir/Dockerfile*)](https://github.com/metabrainz/docker-openjdk8-solr7/blob/$commit/$dir/Dockerfile)"
   printf '%s\n' "$out" >> "$outfile"
 done
 printf '\n' >> "$outfile"
-grep -A 10000 '^For more information' README.md >> "$outfile"
+grep -A 10000 '^This image is updated via pull requests' README.md >> "$outfile"
 mv "$outfile" README.md
