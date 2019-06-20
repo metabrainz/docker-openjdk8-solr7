@@ -1,6 +1,6 @@
 # Supported tags and respective `Dockerfile` links
 
-- [`7.7.1-alpine`, `7.7-alpine`, `7-alpine` (*7.7/alpine/Dockerfile*)](https://github.com/docker-solr/docker-solr/blob/6f7a6e812247d00f9f3c293993e26d6d041c119e/7.7/alpine/Dockerfile)
+- [`7.7.2-alpine`, `7.7-alpine`, `7-alpine`, `latest-alpine` (*7.7/alpine/Dockerfile*)](https://github.com/metabrainz/docker-openjdk8-solr7/blob/a607ea024403305229d493153b8c571b28c5fc52/7.7/alpine/Dockerfile)
 
 This image is updated via pull requests to [the `metabrainz/docker-openjdk8-solr7` GitHub repo](https://github.com/docker-solr/docker-solr) which is derived from [the `docker-solr/docker-solr` GitHub repo](https://github.com/docker-solr/docker-solr).
 
