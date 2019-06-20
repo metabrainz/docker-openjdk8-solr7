@@ -74,18 +74,6 @@ function write_files {
     if [[ "$dash_variant" = "-alpine" ]]; then
         # No Java 11 on Alpine; see https://github.com/docker-library/openjdk/issues/177
         FROM=openjdk:8-jre-alpine
-    elif [[ "$dash_variant" = "-slim" ]]; then
-        if (( major_version == 7 && minor_version >= 3 )) || (( major_version > 7 )); then
-            FROM=openjdk:11-jre-slim
-        else
-            FROM=openjdk:8-jre-slim
-        fi
-    elif [[ -z "$dash_variant" ]]; then
-        if (( major_version == 7 && minor_version >= 3 )) || (( major_version > 7 )); then
-            FROM=openjdk:11-jre-stretch
-        else
-            FROM=openjdk:8-jre-stretch
-        fi
     else
 	    echo "Unexpected variant: $dash_variant"
 	    exit 1
@@ -325,9 +313,7 @@ for version in "${versions[@]}"; do
 
     cd "$TOP_DIR"
 
-    write_files "$full_version"
     write_files "$full_version" 'alpine'
-    write_files "$full_version" 'slim'
     echo
 done
 
