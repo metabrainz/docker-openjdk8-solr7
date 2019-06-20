@@ -72,8 +72,8 @@ function write_files {
     fi
 
     if [[ "$dash_variant" = "-alpine" ]]; then
-        # No Java 11 on Alpine; see https://github.com/docker-library/openjdk/issues/177
-        FROM=openjdk:8-jre-alpine
+        # No more Java 8 on Alpine in Docker Official Images
+        FROM=adoptopenjdk/openjdk8:alpine-jre
     else
 	    echo "Unexpected variant: $dash_variant"
 	    exit 1
@@ -82,7 +82,7 @@ function write_files {
     echo "generating $target_dir"
     mkdir -p "$target_dir"
     <"$template" sed -E \
-      -e "s/FROM \\\$REPLACE_FROM/FROM $FROM/g" \
+      -e "s;FROM \\\$REPLACE_FROM;FROM $FROM;g" \
       -e "s/\\\$REPLACE_SOLR_VERSION/$full_version/g" \
       -e "s/\\\$REPLACE_SOLR_SHA256/$SHA256/g" \
       -e "s/\\\$REPLACE_SOLR_KEYS/$KEYS/g" \
