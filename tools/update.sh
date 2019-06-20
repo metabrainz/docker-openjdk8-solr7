@@ -263,7 +263,7 @@ archiveUrl=${archiveUrl:-'https://archive.apache.org/dist/lucene/solr'}
 DOWNLOADS=downloads
 
 upstream_versions='upstream-versions'
-curl -sSL "$archiveUrl" | sed -E -e 's,.*<a href="(([0-9])+\.([0-9])+\.([0-9])+)/">.*,\1,' | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' | sort --version-sort > "$upstream_versions"
+curl -sSL "$archiveUrl" | sed -E -e 's,.*<a href="(7\.([0-9])+\.([0-9])+)/">.*,\1,' | grep -E '^7\.[0-9]+\.[0-9]+$' | sort --version-sort > "$upstream_versions"
 
 # To ignore a specific version, for when it's not on the mirrors yet, or bad
 #sed -i '/6.6.1/d' "$upstream_versions"
